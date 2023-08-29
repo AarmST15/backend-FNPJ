@@ -4,10 +4,10 @@ require('dotenv').config()
 const string_connection = `Server=${process.env.DB_SERVER}, ${process.env.DB_PORT};Database=${process.env.DB_NAME};User Id=${process.env.DB_USER};Password=${process.env.DB_PWD};Encrypt=false`;
 
 const menuItem = async (res) => {
-    console.log ("string")
+    // console.log ("string")
     try {
         let con = await sql.connect(string_connection)
-        console.log ("connect")
+        // console.log ("connect")
         let request = new sql.Request(con);
         const result = await request.query('select * from Menu')
         return result
@@ -19,7 +19,7 @@ const menuItem = async (res) => {
     finally {
         await sql.close();
     }
-    console.log ("connect fin")
+    // console.log ("connect fin")
 }
 
 

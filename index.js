@@ -368,7 +368,7 @@ app.delete('/cafeorder/delete/:orderId', async function (req, res) {
 // get cafe comment
 app.get('/cafecomment', async function (req, res) {
     let results = await cafeComment(res)
-    res.json(results)
+    res.json(results['recordsets'][0])
 })
 
 // add new comment
